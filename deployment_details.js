@@ -36,7 +36,7 @@ module.exports = {
     /**
      * The UI instance to point to
      */
-    UI_URL: "pressgang-ccms-ui-next",
+    UI_URL: "pressgang-ccms-ui",
     /**
      * The DocBuilder server
      */
@@ -56,12 +56,12 @@ module.exports = {
     /**
      * Where the links to edit the books should go. Replace ${ID} with the spec ID
      */
-    EDIT_LINK: "http://localhost:8080/pressgang-ccms-ui-next/#ContentSpecFilteredResultsAndContentSpecView;query;contentSpecIds=${ID}",
+    EDIT_LINK: "http://localhost:8080/pressgang-ccms-ui/#ContentSpecFilteredResultsAndContentSpecView;query;contentSpecIds=${ID}",
     /**
      * The file that holds the lat time a complete rebuild was completed.
      * @type {string}
      */
-    LAST_RUN_FILE: "/home/pressgang/.docbuilder/docbuilder2_lastrun",
+    LAST_RUN_FILE: "/root/.docbuilder/docbuilder2_lastrun",
     /**
      * The web root dir.
      * @type {string}
