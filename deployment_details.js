@@ -32,7 +32,7 @@ module.exports = {
      * The REST server hostname and port
      * @type {string}
      */
-    BASE_SERVER:  "virt-ecs-01.lab.eng.bne.redhat.com:8080",
+    BASE_SERVER:  "localhost:8080",
     /**
      * The UI instance to point to
      */
@@ -40,7 +40,7 @@ module.exports = {
     /**
      * The DocBuilder server
      */
-    DOCBUILDER_SERVER: "docbuilder.usersys.redhat.com",
+    DOCBUILDER_SERVER: "localhost",
     /**
      * The marker in the OPEN_LINK string that is to be replaced by the spec ID
      */
@@ -52,11 +52,11 @@ module.exports = {
     /**
      * Where the links to open the books should go. Replace ${ID} with the spec ID
      */
-    OPEN_LINK: "http://docbuilder.usersys.redhat.com/${ID}", //http://skynet.usersys.redhat.com:8080/pressgang-ccms-ui/#DocBuilderView;${ID}
+    OPEN_LINK: "http://localhost/${ID}", //http://skynet.usersys.redhat.com:8080/pressgang-ccms-ui/#DocBuilderView;${ID}
     /**
      * Where the links to edit the books should go. Replace ${ID} with the spec ID
      */
-    EDIT_LINK: "http://virt-ecs-01.lab.eng.bne.redhat.com:8080/pressgang-ccms-ui-next/#ContentSpecFilteredResultsAndContentSpecView;query;contentSpecIds=${ID}",
+    EDIT_LINK: "http://localhost:8080/pressgang-ccms-ui-next/#ContentSpecFilteredResultsAndContentSpecView;query;contentSpecIds=${ID}",
     /**
      * The file that holds the lat time a complete rebuild was completed.
      * @type {string}

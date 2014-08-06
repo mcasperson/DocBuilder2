@@ -276,7 +276,10 @@ function processSpecs(updatedSpecs) {
                     /*
                         Add the style, scripts and constants required to build the side menu
                      */
-                    var scriptFiles = "\
+		    var scriptFiles = "";
+		    var styleFiles = "";
+		    
+                    /*var scriptFiles = "\
                                 <script type='application/javascript'>\n\
                                     var BASE_SERVER = '" + deployment.BASE_SERVER + "';\n\
                                     var SPEC_ID = " + id + ";\n\
@@ -299,7 +302,7 @@ function processSpecs(updatedSpecs) {
 					var styleFiles = "<head>\n\
 						<link href='/lib/docbuilder-overlay/css/pressgang.css' rel='stylesheet'>\n\
 						<link href='/lib/docbuilder-overlay/css/style.css' rel='stylesheet'>\n\
-                        <link href='/lib/bootstrap/css/bootstrap.min.css' rel='stylesheet'>\n";
+                        <link href='/lib/bootstrap/css/bootstrap.min.css' rel='stylesheet'>\n";*/
 
                     // Append the custom javascript files to the index.html
                     try {
