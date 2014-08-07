@@ -76,5 +76,11 @@ module.exports = {
      * The maximum number of child processes to run at any given time.
      * @type {number}
      */
-    MAX_PROCESSES: 6
+    MAX_PROCESSES: 6,
+    /**
+    * The amount of time to wait, in milliseconds, before querying the server when no
+    * updates were found.
+    * @type {number}
+    */
+    DELAY_WHEN_NO_UPDATES: 10000;
 }

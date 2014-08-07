@@ -55,12 +55,6 @@ var PUBLICAN_BOOK_ZIPS_COMPLETE=deployment.APACHE_HTML_DIR + PUBLICAN_BOOK_ZIPS;
  */
 var BUILD_BOOK_SCRIPT = __dirname + "/build_original_books.sh";
 /**
- * The amount of time to wait, in milliseconds, before querying the server when no
- * updates were found.
- * @type {number}
- */
-var DELAY_WHEN_NO_UPDATES = 60000;
-/**
  * The frozen tag id
  * @type {number}
  */
@@ -256,10 +250,10 @@ function processSpecs(updatedSpecs) {
 		/*
 			There were no specs to build, so start again after a short delay.
 		 */
-		console.log("Delaying for " + DELAY_WHEN_NO_UPDATES / 1000 + " seconds");
+		console.log("Delaying for " + deployment.DELAY_WHEN_NO_UPDATES / 1000 + " seconds");
 		setTimeout((function() {
 			getListOfSpecsToBuild();
-		}), DELAY_WHEN_NO_UPDATES);
+		}), deployment.DELAY_WHEN_NO_UPDATES);
 	} else {
 		for (var processIndex = 0, processCount = updatedSpecs.length < (deployment.MAX_PROCESSES - childCount) ? updatedSpecs.length : (deployment.MAX_PROCESSES - childCount); processIndex < processCount; ++processIndex) {
 			var specId = updatedSpecs.pop();
@@ -332,7 +326,7 @@ function processSpecs(updatedSpecs) {
 							processSpecs(updatedSpecs);
 						} else if (childCount == 0) {
 							var runTimeSeconds = moment().unix() - thisBuildTime.unix();
-							var delay = (DELAY_WHEN_NO_UPDATES / 1000) - runTimeSeconds;
+							var delay = (deployment.DELAY_WHEN_NO_UPDATES / 1000) - runTimeSeconds;
 
 							if (delay <= 0) {
 								getListOfSpecsToBuild();
@@ -625,7 +619,7 @@ function routeAfterRESTCalls(updatedSpecs, allSpecsArray) {
  */
 function restartAfterFailure() {
 	var runTimeSeconds = moment().unix() - thisBuildTime.unix();
-	var delay = (DELAY_WHEN_NO_UPDATES / 1000) - runTimeSeconds;
+	var delay = (deployment.DELAY_WHEN_NO_UPDATES / 1000) - runTimeSeconds;
 
     thisBuildTime = null;
 
