@@ -82,5 +82,5 @@ module.exports = {
     * updates were found.
     * @type {number}
     */
-    DELAY_WHEN_NO_UPDATES: 10000;
+    DELAY_WHEN_NO_UPDATES: 10000
 }
